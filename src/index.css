@@ -1,0 +1,123 @@
+/* Production-grade URL Shortener Application Styles */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background-color: #f5f7fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Custom Material UI theme colors */
+:root {
+  --primary-main: #1976d2;
+  --primary-dark: #115293;
+  --primary-light: #42a5f5;
+  --secondary-main: #dc004e;
+  --success-main: #2e7d32;
+  --warning-main: #ed6c02;
+  --error-main: #d32f2f;
+  --info-main: #0288d1;
+  
+  /* Background colors */
+  --background-default: #f5f7fa;
+  --background-paper: #ffffff;
+  --surface: #ffffff;
+  
+  /* Text colors */
+  --text-primary: rgba(0, 0, 0, 0.87);
+  --text-secondary: rgba(0, 0, 0, 0.6);
+  --text-disabled: rgba(0, 0, 0, 0.38);
+}
+
+/* Application-specific styles */
+.url-shortener-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.main-content {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stats-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.stats-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.url-card {
+  border-left: 4px solid var(--primary-main);
+  transition: all 0.2s ease-in-out;
+}
+
+.url-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transform: translateY(-1px);
+}
+
+.expired-url {
+  border-left-color: var(--error-main);
+  background-color: rgba(211, 47, 47, 0.03);
+}
+
+.click-analytics {
+  background: linear-gradient(45deg, #f3f4f6, #ffffff);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .main-content {
+    padding: 1rem;
+  }
+  
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Loading animations */
+.loading-shimmer {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Error states */
+.error-state {
+  color: var(--error-main);
+  background-color: rgba(211, 47, 47, 0.04);
+  border-color: rgba(211, 47, 47, 0.2);
+}
+
+/* Success states */
+.success-state {
+  color: var(--success-main);
+  background-color: rgba(46, 125, 50, 0.04);
+  border-color: rgba(46, 125, 50, 0.2);
+}
