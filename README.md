@@ -1,7 +1,7 @@
 # Affordmed Frontend Track
 
 Monorepo with:
-- `logging-middleware/`: Reusable logging client for sending events to the Affordmed Logging API.
+- `logging-middleware/`: Reusable logging client for sending events to the Logging API.
 - `frontend-test-submission/`: React + Vite URL shortener frontend.
 
 ## Repository Structure
